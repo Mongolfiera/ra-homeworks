@@ -29,9 +29,6 @@ const showCurrency = (price, currency) => {
 }
 
 const Listing = ({items}) => {
-  let item = items[0]
-  console.log(item);
-
   return (
   <div className="item-list">
     { items.map( item => { 
