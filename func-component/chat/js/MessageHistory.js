@@ -4,18 +4,25 @@ const MessageHistory = ({list = []}) => {
   if (!list.length) {
     return <ul />;
   }
+   
   return (
     <ul>
-      { list.map((m) => {
-         switch (m.type) {
+      { list.map((props) => {
+        let MessageType;
+         switch (props.type) {
            case 'response':
-             return ( <Response key = {m.id} from = {m.from} message = {m} /> );
+             MessageType = Response;
+             break;
            case 'message': 
-             return ( <Message key = {m.id} from = {m.from} message = {m} /> );
+             MessageType = Message;
+             break;
            case 'typing': 
-             return ( <Typing key = {m.id} from = {m.from} message = {m} /> );
+             MessageType = Typing;
+             break;
          }
-       }
+        
+        return ( <MessageType key = {props.id} from = {props.from} message = {props} /> );
+        }
       )}
     </ul> 
   );
