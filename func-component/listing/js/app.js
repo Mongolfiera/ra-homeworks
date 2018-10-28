@@ -31,9 +31,9 @@ const showCurrency = (price, currency) => {
 const Listing = ({items}) => {
   return (
   <div className="item-list">
-    { items.map( item => { 
+    {items.map(item => { 
       return (
-        <div key = { item.listing_id } className="item">
+        <div key = {item.listing_id} className="item">
           <div className="item-image">
             <a href={item.url}>
               <img src={item.MainImage.url_570xN} />
