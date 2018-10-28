@@ -50,3 +50,7 @@ const Listing = ({items}) => {
   </div>
   );
 }
+
+Listing.defaultProps = {
+  items: []
+};
