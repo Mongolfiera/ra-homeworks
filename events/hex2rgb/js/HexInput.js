@@ -1,14 +1,14 @@
 'use strict';
 
 const HexInput = props => {
-  function onChange() {
-    props.onChange(this.value);
+  function convertColor(event) {
+    props.onChange(event.currentTarget.value);
   }
 
   return (
     <input
       value={props.value}
-      onChange={onChange}
+      onChange={convertColor}
       type="text"
       className="hex-field js-hex-field"
       placeholder="#000000" />
