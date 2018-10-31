@@ -6,15 +6,17 @@ class App extends React.Component {
     this.state = {
       selectedFilter: 'All'
     };
+    this.selectFilter = this.selectFilter.bind(this);
+    this.filterProjects = this.filterProjects.bind(this);
   }
   
-  selectFilter = filter => {
+  selectFilter(filter) {
     this.setState({
       selectedFilter: filter
     });
   }
   
-  filterProjects = () => {
+  filterProjects() {
     return (
       this.state.selectedFilter === 'All' ? this.props.projects : this.props.projects.filter(project => project.category === this.state.selectedFilter)
     );
@@ -31,4 +33,4 @@ class App extends React.Component {
       </div>
     );
   }
-}
+} 
