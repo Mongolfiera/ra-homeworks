@@ -16,16 +16,14 @@ const data = [
   }      
 ];
 
-class Accordion extends React.Component {
-  render() {
-    const {header, data} = this.props;
-    return (
-      <main className="main">
-        <h2 className="title">{header}</h2>
-        {data.map(item => <AccordionSection item={item} />)} 
-      </main>     
-    );
-  } 
+const Accordion = props => {
+  const {header, data} = props;
+  return (
+    <main className="main">
+      <h2 className="title">{header}</h2>
+      {data.map(item => <AccordionSection item={item} />)} 
+    </main>     
+  );
 }
 
 class AccordionSection extends React.Component {
