@@ -9,7 +9,7 @@ fetch(' https://neto-api.herokuapp.com/etsy')
   })
   .then((response) => response.json())
   .then((items) => { ReactDOM.render(<Listing items={items} />, document.getElementById('root')) })
-  .catch((error) => { console.log(error)});
+  .catch((error) => {console.log(error)});
 
 const cutOff = str => {
   return str.slice(0, 49).concat(str.slice(50) && '...');
