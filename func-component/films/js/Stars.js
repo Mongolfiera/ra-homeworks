@@ -1,6 +1,6 @@
 'use strict';
 
-function Stars({count = 0}) {
+const Stars = ({count}) => {
   if (count >= 1 && count <= 5 && typeof count === 'number') {
     return (
       <ul className="card-body-stars u-clearfix">
@@ -9,5 +9,7 @@ function Stars({count = 0}) {
         </li>
       </ul>
     );
+  } else {
+    return null;
   }
 }
