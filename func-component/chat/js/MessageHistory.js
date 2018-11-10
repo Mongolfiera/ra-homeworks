@@ -1,7 +1,7 @@
 'use strict';
 
-const MessageHistory = ({list = []}) => {
-  if (!list.length) {
+const MessageHistory = ({list}) => {
+  if (!list || !list.length) {
     return <ul />;
   }
   
@@ -18,10 +18,10 @@ const MessageHistory = ({list = []}) => {
    
   return (
     <ul>
-      { list.map((props) => {
-        const MessageType = getMessageType(props.type);
+      {list.map((item) => {
+        const MessageType = getMessageType(item.type);
         
-        return ( <MessageType key = {props.id} from = {props.from} message = {props} /> );
+        return ( <MessageType key = {item.id} from = {item.from} message = {item} /> );
         }
       )}
     </ul> 
