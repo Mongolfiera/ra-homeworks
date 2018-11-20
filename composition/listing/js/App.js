@@ -6,12 +6,14 @@ const colorScheme = {
   'female': 'orange'
 }
 
-const getItems = ({items}) => items.map(item => 
-  <Item color={colorScheme[item.type]} item={item} />
-);
+const Items = ({items}) => {
+  return ( 
+    <main>
+      {items.map(item => <Item color={colorScheme[item.type]} item={item} />)}
+    </main>
+  );
+}
 
-const App = ({items}) => {console.log(items); return(
-  <main>
-    {getItems({items})}
-  </main>
+const App = ({items}) => {return(
+    <Items items={items} />
 )};
